@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
+import { Computers } from "../components/computers/ComputerList"
 import { Authorized } from "./Authorized"
 
 export const ApplicationViews = () => {
@@ -9,7 +10,7 @@ export const ApplicationViews = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
-
+            <Route path="/computers" element={<Computers />} />
             </Route>
         </Routes>
     </>

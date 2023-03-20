@@ -3,7 +3,6 @@ import { getComputers } from "../../managers/ComputerManager"
 
 export const Computers = () => {
 
-    const totalPrice = 0
     const [ computers, setComputers ] = useState([])
     
     useEffect(() => {
@@ -18,6 +17,14 @@ export const Computers = () => {
         })
     }
 
+    //Converts strings to floats in JSON objects to calculate total cost
+
+    const totalCost = computers.map(computer => {return (
+        parseFloat(computer.power_supply.price) + parseFloat(computer.processor.price) + parseFloat(computer.gpu.price) +
+        parseFloat(computer.motherboard.price) + parseFloat(computer.ram.price) + parseFloat(computer.case.price) + parseFloat(computer.cpu_cooler.price) + 
+        parseFloat(computer.keyboard.price) + parseFloat(computer.mouse.price) + parseFloat(computer.ssd.price)
+    )
+    })
 
 
 return (<>
@@ -37,9 +44,7 @@ return (<>
                 <p className="pc-customer">{computer.keyboard.title}</p>
                 <p className="pc-customer">{computer.mouse.title}</p>
                 <p className="pc-customer">{computer.ssd.title}</p>
-                <p className="pc-customer">{totalPrice + computer.power_supply.price + computer.processor.price + computer.gpu.price +
-                computer.motherboard.price + computer.ram.price + computer.case.price + computer.cpu_cooler.price + computer.keyboard.price +
-                computer.mouse.price + computer.ssd.price}</p>
+                <p className="pc-customer">Total Cost: ${totalCost}</p>
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>
