@@ -8,17 +8,18 @@ import * as React from 'react'
 export const CreateComputer = () => {
     
     const navigate = useNavigate()
+
     const [caseFans, setCaseFans] = useState([])
     const [cases, setCases] = useState([])
     const [cpuCoolers, setCpuCoolers] = useState([])
     const [gpus, setGpus] = useState([])
-    const [keyboards, setKeyboads] = useState([])
+    const [keyboards, setKeyboards] = useState([])
     const [motherboards, setMotherboards] = useState([])
     const [mice, setMice] = useState([])
     const [powerSupplies, setPowerSupplies] = useState([])
     const [processors, setProcessors] = useState([])
     const [ram, setRam] = useState([])
-    const [ssd, setSsd] = useState([])
+    const [ssds, setSsds] = useState([])
 
     //Initialize and set state for computers
 
@@ -39,8 +40,63 @@ export const CreateComputer = () => {
 
     useEffect(() => {
         //get case fans, and then set state
-        getCaseFans().then(res => )
-    })
+        getCaseFans().then(res => setCaseFans(res))
+    }, [])
+    
+    useEffect(() => {
+        //get cases, and then set state
+        getCases().then(res => setCases(res))
+    }, [])
 
+    useEffect(() => {
+        //get cpu coolers, and then set state
+        getCpuCoolers().then(res => setCpuCoolers(res))
+    }, [])
+
+    useEffect(() => {
+        //get gpus, and then set state
+        getGpus().then(res => setGpus(res))
+    }, [])
+
+    useEffect(() => {
+        //get keyboards, and then set state
+        getKeyboards().then(res => setKeyboards(res))
+    }, [])
+
+    useEffect(() => {
+        //get motherboards, and then set state
+        getMotherboards().then(res => setMotherboards(res))
+    }, [])
+
+    useEffect(() => {
+        //get mice, and then set state
+        getMice().then(res => setMice(res))
+    }, [])
+
+    useEffect(() => {
+        //get power supplies, and then set state
+        getPowerSupplies().then(res => setPowerSupplies(res))
+    }, [])
+
+    useEffect(() => {
+        //get processors, and then set state
+        getProcessors().then(res => setProcessors(res))
+    }, [])
+
+    useEffect(() => {
+        //get RAM, and then set state
+        getRam().then(res => setRam(res))
+    }, [])
+
+    useEffect(() => {
+        //get SSDs, and then set state
+        getSsds().then(res => setSsds(res))
+    }, [])
+
+    const onChange = (event) => {
+        const copy = { ...computer }
+        copy[event.target.name] = event.target.value
+        setComputer(copy)
+    }
 
 }
