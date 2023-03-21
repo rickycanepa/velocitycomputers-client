@@ -35,16 +35,16 @@ return (<>
                 <p className="pc-description">{computer.description}</p>
                 <p className="pc-customer">{computer.customer.user.username}</p>
                 <p className="pc-psu">{computer.power_supply.title}</p>
-                <p className="pc-customer">{computer.processor.title}</p>
-                <p className="pc-customer">{computer.gpu.title}</p>
-                <p className="pc-customer">{computer.motherboard.title}</p>
-                <p className="pc-customer">{computer.ram.title}</p>
-                <p className="pc-customer">{computer.case.title}</p>
-                <p className="pc-customer">{computer.cpu_cooler.title}</p>
-                <p className="pc-customer">{computer.keyboard.title}</p>
-                <p className="pc-customer">{computer.mouse.title}</p>
-                <p className="pc-customer">{computer.ssd.title}</p>
-                <p className="pc-customer">Total Cost: ${totalCost}</p>
+                <p className="pc-processor">{computer.processor.title}</p>
+                <p className="pc-gpu">{computer.gpu.title}</p>
+                <p className="pc-motherboard">{computer.motherboard.title}</p>
+                <p className="pc-ram">{computer.ram.title}</p>
+                <p className="pc-case">{computer.case.title}</p>
+                <p className="pc-cpu_cooler">{computer.cpu_cooler.title}</p>
+                <p className="pc-keyboard">{computer.keyboard.title}</p>
+                <p className="pc-mouse">{computer.mouse.title}</p>
+                <p className="pc-ssd">{computer.ssd.title}</p>
+                <p className="pc-total-cost">Total Cost: ${totalCost}</p>
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>
