@@ -1,0 +1,33 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    padding-top: 60px;
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+  
+  .navbar__item {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .navbar__item:hover {
+    background-color: #555;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+  }
+  

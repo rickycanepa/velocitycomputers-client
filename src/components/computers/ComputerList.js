@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getComputers } from "../../managers/ComputerManager"
+import "./ComputerList.css"
 
 export const Computers = () => {
 
@@ -19,23 +20,42 @@ export const Computers = () => {
 
 
 return (<>
-    <div>
+    <div className="center-container">
         {computers.map(computer => {return  (<div className="computer-card" key={computer.id}>
                 <div className="computerDetails">
-                <p className="pc-name">{computer.name}</p>
-                <p className="pc-description">{computer.description}</p>
-                <p className="pc-customer">{computer.customer.user.username}</p>
-                <p className="pc-psu">{computer.power_supply.title}</p>
-                <p className="pc-processor">{computer.processor.title}</p>
-                <p className="pc-gpu">{computer.gpu.title}</p>
-                <p className="pc-motherboard">{computer.motherboard.title}</p>
-                <p className="pc-ram">{computer.ram.title}</p>
-                <p className="pc-case">{computer.case.title}</p>
-                <p className="pc-cpu_cooler">{computer.cpu_cooler.title}</p>
-                <p className="pc-keyboard">{computer.keyboard.title}</p>
-                <p className="pc-mouse">{computer.mouse.title}</p>
-                <p className="pc-ssd">{computer.ssd.title}</p>
-                <p className="pc-total-cost">Total Cost: ${computer.price}</p>
+                <p className="pc-card">{computer.name}</p>
+                <p className="pc-card">{computer.description}</p>
+                <p className="pc-card">Created By: {computer.customer.user.username}</p>
+                <p className="pc-card">
+                    <a href={computer.power_supply.link} target="_blank" rel="noopener noreferrer">
+                    {computer.power_supply.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.processor.link} target="_blank" rel="noopener noreferrer">
+                    {computer.processor.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.gpu.link} target="_blank" rel="noopener noreferrer">
+                    {computer.gpu.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.motherboard.link} target="_blank" rel="noopener noreferrer">
+                    {computer.motherboard.title}</a></p>
+                <p className="pc-card"><a href={computer.ram.link} target="_blank" rel="noopener noreferrer">
+                    {computer.ram.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.case.link} target="_blank" rel="noopener noreferrer">
+                    {computer.case.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.cpu_cooler.link} target="_blank" rel="noopener noreferrer">
+                    {computer.cpu_cooler.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.keyboard.link} target="_blank" rel="noopener noreferrer">
+                    {computer.keyboard.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.mouse.link} target="_blank" rel="noopener noreferrer">
+                    {computer.mouse.title}</a></p>
+                <p className="pc-card">
+                <a href={computer.ssd.link} target="_blank" rel="noopener noreferrer">
+                    {computer.ssd.title}</a></p>
+                <p className="pc-card">Total Cost: ${computer.price}</p>
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>

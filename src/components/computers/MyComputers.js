@@ -5,6 +5,7 @@ export const ComputersByCustomer = () => {
   const [computers, setComputers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
     async function fetchData() {
       try {
