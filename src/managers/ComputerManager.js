@@ -20,3 +20,7 @@ export const addComputer = (computer) => {
     })
         .then(res => res.json())
 }
+
+export const unfavoriteComputer = computerId => {
+    return fetch('http://localhost:8000/favorites/')
+}
