@@ -79,7 +79,7 @@ export const CreateComputer = () => {
     const changeComputerState = (event) => {
         const copy = { ...computer }
         copy[event.target.name] = event.target.value
-        let totalCost = 0
+        // let totalCost = 0
         setComputer(copy)
         
         let newTotalPrice = 0

@@ -25,7 +25,7 @@ export const updateComputer = (computer, id) => {
         "Authorization": `Token ${localStorage.getItem("velocity_token")}`,
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(event)
+    body: JSON.stringify(computer)
     })
 }
 
