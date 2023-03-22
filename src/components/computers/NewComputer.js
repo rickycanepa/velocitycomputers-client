@@ -118,7 +118,7 @@ export const CreateComputer = () => {
         }
         setTotalPrice(newTotalPrice.toFixed(2))
       }
-        
+    
     
 
     return (

@@ -19,7 +19,7 @@ export const getComputersByCustomer = (id) => {
 }
 
 export const getComputerById = (id) => {
-    return fetch(`http://localhost8000/events/${id}`, {
+    return fetch(`http://localhost:8000/computers/${id}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("velocity_token")}`
         }

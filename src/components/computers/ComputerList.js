@@ -18,6 +18,8 @@ export const Computers = () => {
         })
     }
 
+    console.log(localStorage.getItem('velocity_id'))
+
 
 return (<>
     <div className="center-container">

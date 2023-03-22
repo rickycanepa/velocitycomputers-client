@@ -18,6 +18,7 @@ export const UpdateComputer = () => {
     const [ssds, setSsds] = useState([])
     const { computerId } = useParams()
 
+    console.log(computerId)
     const [currentComputer, setCurrentComputer] = useState({
         name: "",
         description: "",
@@ -28,119 +29,57 @@ export const UpdateComputer = () => {
         motherboard: 0,
         ram: 0,
         case: 0,
+        case_fan: 0,
         cpu_cooler: 0,
         keyboard: 0,
         mouse: 0,
-        ssd: 0,
+        ssd: 0
     })
 
     useEffect(() => {
-        // TODO: Get the power supplies, then set the state
-        getPowerSupplies().then(res => setPowerSupplies(res))
-        getComputerById(computerId).then((res) => {
-            res.powerSupplyId = res.power_supply.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-
-    useEffect(() => {
-        // TODO: Get the case fans, then set the state
-        getCaseFans().then(res => setCaseFans(res))
-        getComputerById(computerId).then((res) => {
-            res.caseFanId = res.case_fan.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the cases, then set the state
-        getCases().then(res => setKases(res))
-        getComputerById(computerId).then((res) => {
-            res.caseId = res.case.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the CPU coolers, then set the state
-        getCpuCoolers().then(res => setCpuCoolers(res))
-        getComputerById(computerId).then((res) => {
-            res.cpuCoolerId = res.cpu_cooler.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the GPUs, then set the state
-        getGpus().then(res => setGpus(res))
-        getComputerById(computerId).then((res) => {
-            res.gpuId = res.gpu.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the keyboards, then set the state
-        getKeyboards().then(res => setKeyboards(res))
-        getComputerById(computerId).then((res) => {
-            res.keyboardId = res.keyboard.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the motherboards, then set the state
-        getMotherboards().then(res => setMotherboards(res))
-        getComputerById(computerId).then((res) => {
-            res.motherboardId = res.motherboard.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the mice, then set the state
-        getMice().then(res => setMice(res))
-        getComputerById(computerId).then((res) => {
-            res.mouseId = res.mouse.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the power supplies, then set the state
-        getPowerSupplies().then(res => setPowerSupplies(res))
-        getComputerById(computerId).then((res) => {
-            res.powerSupplyId = res.power_supply.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the processors, then set the state
-        getProcessors().then(res => setProcessors(res))
-        getComputerById(computerId).then((res) => {
-            res.processorId = res.processor.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the RAM, then set the state
-        getRam().then(res => setRam(res))
-        getComputerById(computerId).then((res) => {
-            res.ramId = res.ram.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
-    
-    useEffect(() => {
-        // TODO: Get the SSDs, then set the state
-        getSsds().then(res => setSsds(res))
-        getComputerById(computerId).then((res) => {
-            res.ssdId = res.ssd.id
-            setCurrentComputer(res)
-        })
-    }, [computerId])
+        Promise.all([
+          getCases(),
+          getProcessors(),
+          getMotherboards(),
+          getRam(),
+          getSsds(),
+          getGpus(),
+          getCpuCoolers(),
+          getPowerSupplies(),
+          getKeyboards(),
+          getMice(),
+          getCaseFans(),
+          getComputerById(computerId)
+        ]).then(([cases, processors, motherboards, ram, ssds, gpus, cpuCoolers, powerSupplies, keyboards, mice, caseFans, currentComputer]) => {
+          setCurrentComputer({
+            ...currentComputer,
+            case: currentComputer.case.id,
+            processor: currentComputer.processor.id,
+            motherboard: currentComputer.motherboard.id,
+            ram: currentComputer.ram.id,
+            ssd: currentComputer.ssd.id,
+            gpu: currentComputer.gpu.id,
+            cpu_cooler: currentComputer.cpu_cooler.id,
+            power_supply: currentComputer.power_supply.id,
+            keyboard: currentComputer.keyboard.id,
+            mouse: currentComputer.mouse.id,
+            case_fan: currentComputer.case_fan
+          });
+          
+          setKases(cases);
+          setProcessors(processors);
+          setMotherboards(motherboards);
+          setRam(ram);
+          setSsds(ssds);
+          setGpus(gpus);
+          setCpuCoolers(cpuCoolers);
+          setPowerSupplies(powerSupplies);
+          setKeyboards(keyboards);
+          setMice(mice);
+          setCaseFans(caseFans);
+        });
+      }, [computerId]);
+      
 
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -417,6 +356,7 @@ export const UpdateComputer = () => {
                     const computer = {
                         name: currentComputer.name,
                         description: currentComputer.description,
+                        customer: currentComputer.customer,
                         power_supply: currentComputer.power_supply,
                         processor: currentComputer.processor,
                         gpu: currentComputer.gpu,
@@ -426,15 +366,15 @@ export const UpdateComputer = () => {
                         cpu_cooler: currentComputer.cpu_cooler,
                         keyboard: currentComputer.keyboard,
                         mouse: currentComputer.keyboard,
-                        ssd: currentComputer.ssd,
+                        ssd: currentComputer.ssd
                     }
 
                     // Send POST request to your API
                     updateComputer(computer, computerId)
-                        .then(() => navigate("/computers"))
+                        .then(() => navigate("/mycomputers"))
                 }}
-                className="btn btn-primary">Create</button>
-                <p className="price">Total Price: ${totalPrice} </p>
+                className="btn btn-primary">Update</button>
+                
         </form>
     )
     

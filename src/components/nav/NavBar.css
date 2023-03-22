@@ -2,32 +2,41 @@
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    width: 220px;
-    padding-top: 60px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     background-color: #333;
-    color: #fff;
-    overflow-x: hidden;
-    transition: 0.3s;
+    color: #333;
   }
   
-  .navbar__item {
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
-  .navbar__item:hover {
-    background-color: #555;
-  }
   
   .nav-link {
-    display: block;
-    padding: 10px;
-    color: #fff;
+    color: white;
     text-decoration: none;
+    margin-right: 25px;
   }
   
   .nav-link:hover {
-    background-color: #555;
+    text-decoration: underline;
   }
+  
+  .navbar__item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fakeLink {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .fakeLink:hover {
+    text-decoration: underline;
+  }
+
   
