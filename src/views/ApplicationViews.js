@@ -3,7 +3,7 @@ import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { Computers } from "../components/computers/ComputerList"
 import { CreateComputer } from "../components/computers/NewComputer"
-import { UpdateComputer } from "../components/computers/updateComputer"
+import { UpdateComputer } from "../components/computers/UpdateComputer"
 import { Authorized } from "./Authorized"
 
 export const ApplicationViews = () => {

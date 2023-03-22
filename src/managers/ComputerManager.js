@@ -9,6 +9,15 @@ export const getComputers = () => {
         .then(response => response.json())
 }
 
+export const getComputersByCustomer = (id) => {
+    return fetch(`http://localhost:8000/computers?customer=${id}`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("velocity_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
 export const getComputerById = (id) => {
     return fetch(`http://localhost8000/events/${id}`, {
         headers:{
