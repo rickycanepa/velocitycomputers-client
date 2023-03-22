@@ -3,7 +3,7 @@ const token = localStorage.getItem("velocity_token")
 export const getComputers = () => {
     return fetch("http://localhost:8000/computers", {
         headers:{
-            "Authorization": `Token ${token}`
+            "Authorization": `Token ${localStorage.getItem("velocity_token")}`
         }
     })
         .then(response => response.json())
@@ -14,7 +14,7 @@ export const addComputer = (computer) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Token ${token}`
+            "Authorization": `Token ${localStorage.getItem("velocity_token")}`
         },
         body: JSON.stringify(computer)
     })

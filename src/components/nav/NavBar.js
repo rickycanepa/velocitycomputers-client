@@ -7,9 +7,10 @@ export const NavBar = () => {
             <li className="navbar__item">
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/computers">PC Builds</Link>
-                <Link className="nav-link" to="/computers">My Builds</Link>
+                <Link className="nav-link" to="/mycomputers">My Builds</Link>
                 <Link className="nav-link" to="/favorites">My Favorites</Link>
                 <Link className="nav-link" to="/staffbuilds">Staff Curated Builds</Link>
+                <Link className="nav-link" to="/newcomputer">Create PC</Link>
                 <Link className="nav-link" to="/classes">Contact Us</Link>
             </li>
             {

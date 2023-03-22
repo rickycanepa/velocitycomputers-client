@@ -17,15 +17,6 @@ export const Computers = () => {
         })
     }
 
-    //Converts strings to floats in JSON objects to calculate total cost
-
-    const totalCost = computers.map(computer => {return (
-        parseFloat(computer.power_supply.price) + parseFloat(computer.processor.price) + parseFloat(computer.gpu.price) +
-        parseFloat(computer.motherboard.price) + parseFloat(computer.ram.price) + parseFloat(computer.case.price) + parseFloat(computer.cpu_cooler.price) + 
-        parseFloat(computer.keyboard.price) + parseFloat(computer.mouse.price) + parseFloat(computer.ssd.price)
-    )
-    })
-
 
 return (<>
     <div>
@@ -44,7 +35,7 @@ return (<>
                 <p className="pc-keyboard">{computer.keyboard.title}</p>
                 <p className="pc-mouse">{computer.mouse.title}</p>
                 <p className="pc-ssd">{computer.ssd.title}</p>
-                <p className="pc-total-cost">Total Cost: ${totalCost}</p>
+                <p className="pc-total-cost">Total Cost: ${computer.price}</p>
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>
