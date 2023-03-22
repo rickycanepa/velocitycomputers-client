@@ -9,6 +9,26 @@ export const getComputers = () => {
         .then(response => response.json())
 }
 
+export const getComputerById = (id) => {
+    return fetch(`http://localhost8000/events/${id}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("velocity_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
+export const updateComputer = (computer, id) => {
+    return fetch(`http://localhost:8000/computers/${id}`, {
+    method: "PUT",
+    headers: {
+        "Authorization": `Token ${localStorage.getItem("velocity_token")}`,
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(event)
+    })
+}
+
 export const addComputer = (computer) => {
     return fetch("http://localhost:8000/computers", { 
         method: "POST",
