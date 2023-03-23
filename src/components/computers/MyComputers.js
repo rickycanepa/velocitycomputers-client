@@ -23,7 +23,7 @@ export const ComputersByCustomer = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   }
   return (<>
   
