@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getComputersByCustomer } from '../../managers/ComputerManager';
+import { deleteComputer, getComputers, getComputersByCustomer } from '../../managers/ComputerManager';
 import { useNavigate } from 'react-router-dom';
 import "./ComputerList.css"
 
@@ -8,7 +8,13 @@ export const ComputersByCustomer = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
 
-  
+  const handleClick = (id) => {
+    deleteComputer(id)
+    .then(() => {
+        getComputersByCustomer(localStorage.getItem('velocity_id')).then(data => setComputers(data))
+    })
+} 
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -67,6 +73,10 @@ export const ComputersByCustomer = () => {
                         onClick={() => {
                             navigate({ pathname: `/computers/edit/${computer.id}`})
                         }}>Edit</button>
+                <button
+                        onClick={() => {
+                            handleClick(computer.id)
+                            }}>Delete</button>
 
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
