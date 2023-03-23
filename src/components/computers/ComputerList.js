@@ -12,26 +12,12 @@ export const Computers = () => {
         })
     }, [])
 
-    const getAllComputers = () => {
-        getComputers().then(data => {
-            setComputers(data)
-        })
-    }
-
-    const handleFavorite = (id) => {
-        favorite(id).then(() => {
-            {getAllComputers()}
-        })
-    }
-
-    const handleUnfavorite = (id) => {
-        unfavorite(id).then(() => {
-            {getAllComputers()}
-        })
-    }
-
+    // const getAllComputers = () => {
+    //     getComputers().then(data => {
+    //         setComputers(data)
+    //     })
+    // }
     
-
 
 return (<>
     <div className="center-container">
@@ -42,34 +28,54 @@ return (<>
                 <p className="pc-card">Created By: {computer.customer.user.username}</p>
                 <p className="pc-card">
                     <a href={computer.power_supply.link} target="_blank" rel="noopener noreferrer">
-                    {computer.power_supply.title}</a></p>
+                    Power Supply: {computer.power_supply.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.processor.link} target="_blank" rel="noopener noreferrer">
-                    {computer.processor.title}</a></p>
+                    Processor: {computer.processor.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.gpu.link} target="_blank" rel="noopener noreferrer">
-                    {computer.gpu.title}</a></p>
+                    GPU: {computer.gpu.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.motherboard.link} target="_blank" rel="noopener noreferrer">
-                    {computer.motherboard.title}</a></p>
+                    Motherboard: {computer.motherboard.title}</a></p>
                 <p className="pc-card"><a href={computer.ram.link} target="_blank" rel="noopener noreferrer">
-                    {computer.ram.title}</a></p>
+                    Ram: {computer.ram.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.case.link} target="_blank" rel="noopener noreferrer">
-                    {computer.case.title}</a></p>
+                    Case: {computer.case.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.cpu_cooler.link} target="_blank" rel="noopener noreferrer">
-                    {computer.cpu_cooler.title}</a></p>
+                    CPU: {computer.cpu_cooler.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.keyboard.link} target="_blank" rel="noopener noreferrer">
-                    {computer.keyboard.title}</a></p>
+                    Keyboard: {computer.keyboard.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.mouse.link} target="_blank" rel="noopener noreferrer">
-                    {computer.mouse.title}</a></p>
+                    Mouse: {computer.mouse.title}</a></p>
                 <p className="pc-card">
                 <a href={computer.ssd.link} target="_blank" rel="noopener noreferrer">
-                    {computer.ssd.title}</a></p>
+                    SSD: {computer.ssd.title}</a></p>
                 <p className="pc-card">Total Cost: ${computer.price}</p>
+                {
+                                computer.joined 
+                                ?
+                                    <button
+                                    onClick={() => {
+                                        unfavorite(computer.id)
+                                        .then(() => {
+                                            getComputers().then(data => setComputers(data))
+                                        })
+                                    }}>Unfavorite</button>
+                                :
+                                    <button
+                                    onClick={() => {
+                                        favorite(computer.id)
+                                        .then(() => {
+                                            getComputers().then(data => setComputers(data))
+                                        })
+                                    }}>Favorite</button>
+                            }
+                <p className="pc-card">{computer.likes.length} Favorites</p>                             
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>
