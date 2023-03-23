@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { getComputers } from "../../managers/ComputerManager"
+import { favorite, getComputers } from "../../managers/ComputerManager"
 import "./ComputerList.css"
 
 export const Computers = () => {
@@ -15,6 +15,12 @@ export const Computers = () => {
     const getAllComputers = () => {
         getComputers().then(data => {
             setComputers(data)
+        })
+    }
+
+    const handleFavorite = (id) => {
+        favorite(id).then(() => {
+            {getAllEvents()}
         })
     }
 
