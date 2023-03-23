@@ -10,21 +10,25 @@ export const FavoritedComputers = () => {
       setComputers(data);
     });
   }, []);
-
-  const likedComputers = computers.map((computer) => {
-    return computer.likes.filter((like) => like.id === localStorage.getItem("velocity_id"));
+  
+  const computersWithLikes = computers.filter(computer => {
+    return computer.likes.some(like => like.id == localStorage.getItem("velocity_id"))
   });
+
+
+  
+
 
   return (
     <>
       <div className="center-container">
-        {likedComputers.map((computer) => {
+        {computersWithLikes.map((computer) => {
           return (
             <div className="computer-card" key={computer.id}>
               <div className="computerDetails">
                 <p className="pc-card">{computer.name}</p>
                 <p className="pc-card">{computer.description}</p>
-                <p className="pc-card">Created By: {computer.customer.username}</p>
+                <p className="pc-card">Created By: {computer.customer.user.username}</p>
                 <p className="pc-card">
                   <a href={computer.power_supply.link} target="_blank" rel="noopener noreferrer">
                     Power Supply: {computer.power_supply.title}

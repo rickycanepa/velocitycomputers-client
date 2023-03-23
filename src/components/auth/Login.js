@@ -29,33 +29,62 @@ export const Login = () => {
     }
 
     return (
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" ref={invalidDialog}>
-                <div>Username or password was not valid.</div>
-                <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
-            </dialog>
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>VelocityComputers</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputUsername"> Username </label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username" required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
-                    </fieldset>
-                    <fieldset style={{
-                        textAlign: "center"
-                    }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
-                    </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
+        <main className="flex min-h-screen w-full items-center justify-center bg-gray-900 text-white">
+        <dialog ref={invalidDialog}>
+          <div>Username or password was not valid.</div>
+          <button
+            className="absolute top-0 right-0 m-2 text-lg text-white hover:text-gray-400 focus:outline-none"
+            onClick={(e) => invalidDialog.current.close()}
+          >
+            &times;
+          </button>
+        </dialog>
+        <section className="mx-auto p-8 bg-gray-800 rounded-lg shadow-lg">
+          <h1 className="text-4xl font-bold mb-4">VelocityComputers</h1>
+  
+          <h2 className="text-center text-2xl font-medium mb-8">Sign in</h2>
+          <form className="space-y-4" onSubmit={handleLogin}>
+            <fieldset>
+              <label htmlFor="inputUsername" className="sr-only">
+                Username
+              </label>
+              <input
+                ref={username}
+                type="username"
+                id="username"
+                className="w-full px-4 py-2 rounded-lg border-none bg-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                placeholder="Username"
+                required
+                autoFocus
+              />
+            </fieldset>
+            <fieldset>
+              <label htmlFor="inputPassword" className="sr-only">
+                Password
+              </label>
+              <input
+                ref={password}
+                type="password"
+                id="password"
+                className="w-full px-4 py-2 rounded-lg border-none bg-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                placeholder="Password"
+                required
+              />
+            </fieldset>
+            <fieldset className="text-center">
+              <button
+                className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                type="submit"
+              >
+                Sign In
+              </button>
+            </fieldset>
+          </form>
+        </section>
+        <section className="text-center mt-8 flex-col items-center">
+          <Link to='/register' className="text-gray-400 flex-col items-center"> Not a member yet?</Link>
+          </section>
         </main>
+        
     )
 }
