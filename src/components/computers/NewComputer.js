@@ -122,32 +122,32 @@ export const CreateComputer = () => {
     
 
     return (
-        <form className="computerForm">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
             <h2 className="computerForm__title">Create New PC</h2>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">PC Title: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
+                <div className="mb-4">
+                    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">PC Title: </label>
+                    <input type="text" name="name" required autoFocus className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.name}
                         onChange={changeComputerState}
                     />
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Description: </label>
-                    <input type="text" name="description" required className="form-control"
+                <div className="mb-4">
+                    <label htmlFor="description" className="block text-gray-700 font-bold mb-2">Description: </label>
+                    <input type="text" name="description" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.description}
                         onChange={changeComputerState}
                     />
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Power Supply: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Power Supply: </label>
                 <select
                         name="power_supply"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.power_supply}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -163,11 +163,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Processor: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Processor: </label>
                 <select
                         name="processor"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.processor}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -183,11 +183,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">GPU: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">GPU: </label>
                 <select
                         name="gpu"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.gpu}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -203,11 +203,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Motherboard: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Motherboard: </label>
                 <select
                         name="motherboard"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.motherboard}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -223,11 +223,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">RAM: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">RAM: </label>
                 <select
                         name="ram"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.ram}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -243,11 +243,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Case: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Case: </label>
                 <select
                         name="case"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.case}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -263,11 +263,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">CPU Cooler: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">CPU Cooler: </label>
                 <select
                         name="cpu_cooler"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.cpu_cooler}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -283,11 +283,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Keyboard: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Keyboard: </label>
                 <select
                         name="keyboard"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.keyboard}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -303,11 +303,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Mouse: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Mouse: </label>
                 <select
                         name="mouse"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.mouse}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -323,11 +323,11 @@ export const CreateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">SSD: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">SSD: </label>
                 <select
                         name="ssd"
-                        className="form-control"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={computer.ssd}
                         onChange={(event) => {
                             const copy = { ...computer }
@@ -367,8 +367,8 @@ export const CreateComputer = () => {
                     addComputer(newComputer)
                         .then(() => navigate("/computers"))
                 }}
-                className="btn btn-primary">Create</button>
-                <p className="price">Total Price: ${totalPrice} </p>
+                className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
+                <p className="text-gray-700 mt-4">Total Price: ${totalPrice} </p>
         </form>
     )
 }

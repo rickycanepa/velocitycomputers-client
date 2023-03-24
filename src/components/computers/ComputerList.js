@@ -97,9 +97,10 @@ return (
                   Favorite
                 </button>
               )}
-              <p className="text-gray-600 text-sm ml-4">{computer.likes.length} Favorites</p>
-              {/* { deleteButton(itemObj.id) }
-              <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
+              <p className="text-gray-600 text-sm ml-4">
+                {computer.likes.length} {computer.likes.length === 1 ? 'Favorite' : 'Favorites'}
+              </p>
+
             </div>
           </div>
         );

@@ -127,37 +127,37 @@ export const UpdateComputer = () => {
     }
 
     return (
-        <form className="computerForm">
-            <h2 className="computerForm__title">Edit PC</h2>
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
+            <h2 className="computerForm__title">Create New PC</h2>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">PC Title: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
-                        value={currentComputer.name}
+                <div className="mb-4">
+                    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">PC Title: </label>
+                    <input type="text" name="name" required autoFocus className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.name}
                         onChange={changeComputerState}
                     />
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Description: </label>
-                    <input type="text" name="description" required className="form-control"
-                        value={currentComputer.description}
+                <div className="mb-4">
+                    <label htmlFor="description" className="block text-gray-700 font-bold mb-2">Description: </label>
+                    <input type="text" name="description" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.description}
                         onChange={changeComputerState}
                     />
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Power Supply: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Power Supply: </label>
                 <select
                         name="power_supply"
-                        className="form-control"
-                        value={currentComputer.power_supply}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.power_supply}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.power_supply = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -168,16 +168,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Processor: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Processor: </label>
                 <select
                         name="processor"
-                        className="form-control"
-                        value={currentComputer.processor}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.processor}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.processor = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -188,16 +188,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">GPU: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">GPU: </label>
                 <select
                         name="gpu"
-                        className="form-control"
-                        value={currentComputer.gpu}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.gpu}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.gpu = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -208,16 +208,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Motherboard: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Motherboard: </label>
                 <select
                         name="motherboard"
-                        className="form-control"
-                        value={currentComputer.motherboard}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.motherboard}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.motherboard = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -228,16 +228,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">RAM: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">RAM: </label>
                 <select
                         name="ram"
-                        className="form-control"
-                        value={currentComputer.ram}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.ram}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.ram = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -248,16 +248,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Case: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Case: </label>
                 <select
                         name="case"
-                        className="form-control"
-                        value={currentComputer.case}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.case}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.case = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -268,16 +268,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">CPU Cooler: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">CPU Cooler: </label>
                 <select
                         name="cpu_cooler"
-                        className="form-control"
-                        value={currentComputer.cpu_cooler}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.cpu_cooler}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.cpu_cooler = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -288,16 +288,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Keyboard: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Keyboard: </label>
                 <select
                         name="keyboard"
-                        className="form-control"
-                        value={currentComputer.keyboard}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.keyboard}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.keyboard = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -308,16 +308,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">Mouse: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">Mouse: </label>
                 <select
                         name="mouse"
-                        className="form-control"
-                        value={currentComputer.mouse}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.mouse}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.mouse = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -328,16 +328,16 @@ export const UpdateComputer = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                <label className="label">SSD: </label>
+                <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">SSD: </label>
                 <select
                         name="ssd"
-                        className="form-control"
-                        value={currentComputer.ssd}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        value={computer.ssd}
                         onChange={(event) => {
-                            const copy = { ...currentComputer }
+                            const copy = { ...computer }
                             copy.ssd = parseInt(event.target.value)
-                            setCurrentComputer(copy)
+                            setComputer(copy)
                             changeComputerState(event)
                         }}>
                         <option value="0">Choose:</option>
@@ -373,7 +373,7 @@ export const UpdateComputer = () => {
                     updateComputer(computer, computerId)
                         .then(() => navigate("/mycomputers"))
                 }}
-                className="btn btn-primary">Update</button>
+                className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
                 
         </form>
     )
