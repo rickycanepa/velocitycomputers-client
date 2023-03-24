@@ -7,6 +7,7 @@ export const ComputersByCustomer = () => {
   const [computers, setComputers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
+  const [message, setMessage] = useState(null);
 
   const handleClick = (id) => {
     deleteComputer(id)
@@ -28,17 +29,8 @@ export const ComputersByCustomer = () => {
     fetchData();
   }, []);
 
-  if (computers.length === 0) {
-    return (
-        <body class="h-screen flex">
-            <p class="text-2xl font-bold flex-grow flex items-center justify-center">Hmmm... Looks like you haven't created any computers yet.</p>
-        </body>
-    );
-  }
-
 
   return (<>
-  
   <div className="center-container">
       {computers.map((computer) => {
         return (
@@ -131,15 +123,12 @@ export const ComputersByCustomer = () => {
                         onClick={() => {
                             handleClick(computer.id)
                             }}>Delete</button>
-
-                {/* { deleteButton(itemObj.id) }
-                <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                 </div>
             </div>)})}
                         </div>
     </>)
 
+            }
 
-}
 
 
