@@ -28,9 +28,15 @@ export const ComputersByCustomer = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  if (computers.length === 0) {
+    return (
+        <body class="h-screen flex">
+            <p class="text-2xl font-bold flex-grow flex items-center justify-center">Hmmm... Looks like you haven't created any computers yet.</p>
+        </body>
+    );
   }
+
+
   return (<>
   
   <div className="center-container">

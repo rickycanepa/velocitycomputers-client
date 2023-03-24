@@ -29,62 +29,61 @@ export const Login = () => {
     }
 
     return (
-        <main className="flex min-h-screen w-full items-center justify-center bg-gray-900 text-white">
-        <dialog ref={invalidDialog}>
-          <div>Username or password was not valid.</div>
-          <button
-            className="absolute top-0 right-0 m-2 text-lg text-white hover:text-gray-400 focus:outline-none"
-            onClick={(e) => invalidDialog.current.close()}
-          >
-            &times;
-          </button>
-        </dialog>
-        <section className="mx-auto p-8 bg-gray-800 rounded-lg shadow-lg">
-          <h1 className="text-4xl font-bold mb-4">VelocityComputers</h1>
-  
-          <h2 className="text-center text-2xl font-medium mb-8">Sign in</h2>
-          <form className="space-y-4" onSubmit={handleLogin}>
-            <fieldset>
-              <label htmlFor="inputUsername" className="sr-only">
-                Username
-              </label>
-              <input
-                ref={username}
-                type="username"
-                id="username"
-                className="w-full px-4 py-2 rounded-lg border-none bg-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                placeholder="Username"
-                required
-                autoFocus
-              />
-            </fieldset>
-            <fieldset>
-              <label htmlFor="inputPassword" className="sr-only">
-                Password
-              </label>
-              <input
-                ref={password}
-                type="password"
-                id="password"
-                className="w-full px-4 py-2 rounded-lg border-none bg-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                placeholder="Password"
-                required
-              />
-            </fieldset>
-            <fieldset className="text-center">
-              <button
-                className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                type="submit"
-              >
-                Sign In
-              </button>
-            </fieldset>
-          </form>
-        </section>
-        <section className="text-center mt-8 flex-col items-center">
-          <Link to='/register' className="text-gray-400 flex-col items-center"> Not a member yet?</Link>
-          </section>
-        </main>
+<main class="bg-gray-50 flex flex-col items-center justify-center min-h-screen">
+  <dialog ref={invalidDialog}>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <strong class="font-bold">Oops!</strong>
+      <span class="block sm:inline"> Username or password was not valid.</span>
+      <button class="absolute top-0 right-0 px-2 py-1" onclick={(e) => invalidDialog.current.close()}>
+        <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a1 1 0 00-1.414 0L10 8.586 6.066 4.652a1 1 0 10-1.414 1.414L8.586 10l-3.934 3.934a1 1 0 001.414 1.414L10 11.414l3.934 3.934a1 1 0 001.414-1.414L11.414 10l3.934-3.934a1 1 0 000-1.414z"/></svg>
+      </button>
+    </div>
+  </dialog>
+  <section class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <h1 class="text-center text-3xl mb-8">VelocityComputers</h1>
+    <form class="space-y-6" onSubmit={handleLogin}>
+      <div>
+        <label class="block text-gray-700 font-bold mb-2" for="username">
+          Username
+        </label>
+        <input
+          ref={username}
+          type="username"
+          id="username"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Username"
+          required
+          autofocus
+        />
+      </div>
+      <div>
+        <label class="block text-gray-700 font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          ref={password}
+          type="password"
+          id="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <Link to='/register' class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+          Not a member yet?
+        </Link>
+      </div>
+    </form>
+  </section>
+</main>
+
         
     )
 }
