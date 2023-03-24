@@ -5,6 +5,7 @@ import { Computers } from "../components/computers/ComputerList"
 import { FavoritedComputers } from "../components/computers/FavoritedComputers"
 import { ComputersByCustomer } from "../components/computers/MyComputers"
 import { CreateComputer } from "../components/computers/NewComputer"
+import { RenderHome } from "../components/computers/RenderHome"
 import { UpdateComputer } from "../components/computers/UpdateComputer"
 import { Authorized } from "./Authorized"
 
@@ -19,6 +20,7 @@ export const ApplicationViews = () => {
             <Route path="/newcomputer" element={<CreateComputer />} />
             <Route path="/computers/edit/:computerId" element={<UpdateComputer />} />
             <Route path="/mycomputers" element={<ComputersByCustomer />} />
+            <Route path="/" element={<RenderHome />} />
             </Route>
         </Routes>
     </>
