@@ -15,8 +15,19 @@ export const FavoritedComputers = () => {
     return computer.likes.some(like => like.id == localStorage.getItem("velocity_id"))
   });
 
-
+  const computersWithoutLikes = computers.filter(computer => {
+    return !computer.likes.some(like => like.id == localStorage.getItem("velocity_id"))
+  });
   
+  if (computersWithoutLikes.length === computers.length) {
+    return (
+        <body class="h-screen flex">
+            <p class="text-2xl font-bold flex-grow flex items-center justify-center">Hmmm... Looks like you haven't liked any computers yet.</p>
+        </body>
+    );
+  }
+
+
 
 
   return (
