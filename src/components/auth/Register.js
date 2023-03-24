@@ -29,7 +29,7 @@ export const Register = () => {
                     if ("token" in res) {
                         localStorage.setItem("velocity_token", res.token)
                         localStorage.setItem("velocity_id", res.user_id)
-                        navigate("/")
+                        navigate("/login")
                     }
                 })
         } else {

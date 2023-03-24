@@ -30,8 +30,8 @@ export const ComputersByCustomer = () => {
 
   if (computers.length === 0) {
     return (
-        <body class="h-screen flex">
-            <p class="text-2xl font-bold flex-grow flex items-center justify-center">Hmmm... Looks like you haven't created any computers yet.</p>
+        <body className="h-screen flex">
+            <p className="text-2xl font-bold flex-grow flex items-center justify-center">Hmmm... Looks like you haven't created any computers yet.</p>
         </body>
     );
   }
@@ -98,39 +98,24 @@ export const ComputersByCustomer = () => {
                 </a>
               </p>
               <p className="text-gray-700 font-bold text-base mb-2">Total Cost: ${computer.price}</p>
-              {computer.joined ? (
-                <button
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                  onClick={() => {
-                    unfavorite(computer.id).then(() => {
-                      getComputers().then((data) => setComputers(data));
-                    });
-                  }}
-                >
-                  Unfavorite
-                </button>
-              ) : (
-                <button
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                  onClick={() => {
-                    favorite(computer.id).then(() => {
-                      getComputers().then((data) => setComputers(data));
-                    });
-                  }}
-                >
-                  Favorite
-                </button>
-              )}
               <p className="text-gray-600 text-sm ml-4">{computer.likes.length} Favorites</p>
                 <p className="pc-card">Total Cost: ${computer.price}</p>
                 <button
-                        onClick={() => {
-                            navigate({ pathname: `/computers/edit/${computer.id}`})
-                        }}>Edit</button>
-                <button
-                        onClick={() => {
-                            handleClick(computer.id)
-                            }}>Delete</button>
+  onClick={() => {
+    navigate({ pathname: `/computers/edit/${computer.id}`})
+  }}
+  className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full mr-4"
+>
+  Edit
+</button>
+<button
+  onClick={() => {
+    handleClick(computer.id)
+        }}
+    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+    >
+                    Delete
+                </button>
 
                 {/* { deleteButton(itemObj.id) }
                 <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
