@@ -7,7 +7,7 @@ export const ComputersByCustomer = () => {
   const [computers, setComputers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
-  const [message, setMessage] = useState(null);
+
 
   const handleClick = (id) => {
     deleteComputer(id)
@@ -31,7 +31,12 @@ export const ComputersByCustomer = () => {
 
 
   return (<>
+
   <div className="center-container">
+    {computers.length === 0 ? (
+        <p>Hmmm... Looks like you haven't created any computers.</p>
+    ) : (
+    <p>Hmmm...</p>
       {computers.map((computer) => {
         return (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden mt-10" key={computer.id}>
@@ -101,7 +106,6 @@ export const ComputersByCustomer = () => {
                 >
                   Unfavorite
                 </button>
-              ) : (
                 <button
                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => {
