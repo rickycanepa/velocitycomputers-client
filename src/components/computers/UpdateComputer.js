@@ -19,7 +19,7 @@ export const UpdateComputer = () => {
     const { computerId } = useParams()
 
     console.log(computerId)
-    const [currentComputer, setCurrentComputer] = useState({
+    const [computer, setComputer] = useState({
         name: "",
         description: "",
         customer: 0,
@@ -51,8 +51,8 @@ export const UpdateComputer = () => {
           getCaseFans(),
           getComputerById(computerId)
         ]).then(([cases, processors, motherboards, ram, ssds, gpus, cpuCoolers, powerSupplies, keyboards, mice, caseFans, currentComputer]) => {
-          setCurrentComputer({
-            ...currentComputer,
+          setComputer({
+            ...computer,
             case: currentComputer.case.id,
             processor: currentComputer.processor.id,
             motherboard: currentComputer.motherboard.id,
@@ -81,49 +81,14 @@ export const UpdateComputer = () => {
       }, [computerId]);
       
 
-    const [totalPrice, setTotalPrice] = useState(0)
 
     const changeComputerState = (event) => {
-        const copy = { ...currentComputer }
+        const copy = { ...computer }
         copy[event.target.name] = event.target.value
         let totalCost = 0
-        setCurrentComputer(copy)
+        setComputer(copy)
 
-        let newTotalPrice = 0
-        if (copy.power_supply > 0) {
-          newTotalPrice += parseFloat(powerSupplies[copy.power_supply - 1].price);
-        }
-        if (copy.case > 0) {
-          newTotalPrice += parseFloat(kases[copy.case - 1].price)
-        }
-        if (copy.case_fan > 0) {
-            newTotalPrice += parseFloat(caseFans[copy.case_fan - 1].price)
-        }
-        if (copy.cpu_cooler > 0) {
-            newTotalPrice += parseFloat(cpuCoolers[copy.cpu_cooler - 1].price)
-        }
-        if (copy.gpu > 0) {
-            newTotalPrice += parseFloat(gpus[copy.gpu - 1].price)
-        }
-        if (copy.keyboard > 0) {
-            newTotalPrice += parseFloat(keyboards[copy.keyboard - 1].price)
-        }
-        if (copy.motherboard > 0) {
-            newTotalPrice += parseFloat(motherboards[copy.motherboard - 1].price)
-        }
-        if (copy.mouse > 0) {
-            newTotalPrice += parseFloat(mice[copy.mouse - 1].price)
-        }
-        if (copy.processor > 0) {
-            newTotalPrice += parseFloat(processors[copy.processor - 1].price)
-        }
-        if (copy.ram > 0) {
-            newTotalPrice += parseFloat(ram[copy.ram - 1].price)
-        }
-        if (copy.ssd > 0) {
-            newTotalPrice += parseFloat(ssds[copy.ssd - 1].price)
-        }
-        setTotalPrice(newTotalPrice.toFixed(2))
+
     }
 
     return (
@@ -353,24 +318,24 @@ export const UpdateComputer = () => {
                 onClick={evt => {
                     // Prevent form from being submitted
                     evt.preventDefault()
-                    const computer = {
-                        name: currentComputer.name,
-                        description: currentComputer.description,
-                        customer: currentComputer.customer,
-                        power_supply: currentComputer.power_supply,
-                        processor: currentComputer.processor,
-                        gpu: currentComputer.gpu,
-                        motherboard: currentComputer.motherboard,
-                        ram: currentComputer.ram,
-                        case: currentComputer.case,
-                        cpu_cooler: currentComputer.cpu_cooler,
-                        keyboard: currentComputer.keyboard,
-                        mouse: currentComputer.keyboard,
-                        ssd: currentComputer.ssd
+                    const updatedComputer = {
+                        name: computer.name,
+                        description: computer.description,
+                        customer: computer.customer,
+                        power_supply: computer.power_supply,
+                        processor: computer.processor,
+                        gpu: computer.gpu,
+                        motherboard: computer.motherboard,
+                        ram: computer.ram,
+                        case: computer.case,
+                        cpu_cooler: computer.cpu_cooler,
+                        keyboard: computer.keyboard,
+                        mouse: computer.keyboard,
+                        ssd: computer.ssd
                     }
 
                     // Send POST request to your API
-                    updateComputer(computer, computerId)
+                    updateComputer(updatedComputer, computerId)
                         .then(() => navigate("/mycomputers"))
                 }}
                 className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
