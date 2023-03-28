@@ -1,22 +1,52 @@
-import React, { useEffect, useState } from "react"
-import { favorite, getComputers, unfavorite } from "../../managers/ComputerManager"
-import "./ComputerList.css"
+import React, { useEffect, useState } from "react";
+import { favorite, getComputers, unfavorite } from "../../managers/ComputerManager";
+import "./ComputerList.css";
+import "./Toggle.css"
 
 export const Computers = () => {
+  const [computers, setComputers] = useState([]);
+  const [sortByLikes, setSortByLikes] = useState(false);
 
-    const [ computers, setComputers ] = useState([])
-    
-    useEffect(() => {
-        getComputers().then(data => {
-            setComputers(data)
-        })
-    }, [])
+  useEffect(() => {
+    getComputers().then((data) => {
+      setComputers(data);
+    });
+  }, []);
+
+  const handleSortByLikesChange = () => {
+    setSortByLikes(!sortByLikes);
+  };
+
+  const compareByLikes = (a, b) => {
+    if (a.likes.length > b.likes.length) {
+      return -1;
+    }
+    if (a.likes.length < b.likes.length) {
+      return 1;
+    }
+    return 0;
+  };
+
+  const sortedComputers = sortByLikes ? computers.sort(compareByLikes) : computers;
     
 
 return (
     <>
     <div className="center-container">
-      {computers.map((computer) => {
+    <label className="mt-20 mr-100 flex items-center justify-end">
+  <span className="text-gray-500 mr-2">Sort by Favorites:</span>
+  <div className="relative">
+    <input
+      type="checkbox"
+      checked={sortByLikes}
+      onChange={handleSortByLikesChange}
+      className="hidden"
+    />
+    <div className="w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+    <div className="toggle__dot absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0"></div>
+  </div>
+</label>
+      {sortedComputers.map((computer) => {
         return (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden mt-10" key={computer.id}>
             <div className="px-6 py-4">
