@@ -23,19 +23,19 @@ https://user-images.githubusercontent.com/84530867/229976033-1741d4e1-11c5-47cf-
 
 Users can favorite and unfavorite builds, and navigate to my favorites to view their favorites.
 
-![Favorites](https://i.gyazo.com/610ab5202d753ca68330981abf905f0c.mp4)
+https://user-images.githubusercontent.com/84530867/229976183-abffd97a-e9fa-46c9-8d0f-139a43a04447.mp4
 
 Users can sort the PC feed from most to least favorited.
 
-![Sort](https://i.gyazo.com/20835943d8bfc5ed7fd596b92a6ff929.mp4)
+https://user-images.githubusercontent.com/84530867/229976290-2f8a05c6-37ff-461a-b9cf-def07af50ae7.mp4
 
 Users can create a PC build. The price will dynamically render at the bottom as each part is selected.
 
-![create](https://i.gyazo.com/790d6b4b645afd25a2be3b09791f7a74.mp4)
+https://user-images.githubusercontent.com/84530867/229976358-a50f2ddb-c539-4f9b-bb5b-53d4f83380d7.mp4
 
 Users can view a list of their builds, where you can also edit and delete builds they have created.
 
-![My builds](https://i.gyazo.com/26119e8865b70949dee61ce7a3659b85.mp4)
+https://user-images.githubusercontent.com/84530867/229976429-b073a0f4-e604-4c8b-b700-d450cf83fd2c.mp4
 
 ## Tech Stack Used
 
