@@ -37,6 +37,10 @@ Users can view a list of their builds, where you can also edit and delete builds
 
 https://user-images.githubusercontent.com/84530867/229976429-b073a0f4-e604-4c8b-b700-d450cf83fd2c.mp4
 
+## ERD
+
+![03a63e936f685d2d9023a64da2004036](https://user-images.githubusercontent.com/84530867/229978159-62c35020-c762-403b-ab01-4fa0b5987342.png)
+
 ## Tech Stack Used
 
 This app was created by leveraging ReactJS, Tailwind CSS, Python/Django, and SQLite.
