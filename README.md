@@ -1,70 +1,42 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# VelocityComputers
 
-## Available Scripts
+A web app for users who wish to create PC builds and share them with other users.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Once the repo is cloned, run npm install. You will also need to clone the server-side repo and run the server to access.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Link to server-side repo: https://github.com/rickycanepa/velocitycomputers-server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  git clone git@github.com:rickycanepa/velocitycomputers-client.git
+  npm install
+  npm start
+```
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users can create view a feed of user created PC builds.
 
-### `npm run build`
+![PC Feed](https://i.gyazo.com/3d07d84bb41429e2e150151bf23a7911.mp4)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Users can favorite and unfavorite builds, and navigate to my favorites to view their favorites.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Favorites](https://i.gyazo.com/610ab5202d753ca68330981abf905f0c.mp4)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can sort the PC feed from most to least favorited.
 
-### `npm run eject`
+![Sort](https://i.gyazo.com/20835943d8bfc5ed7fd596b92a6ff929.mp4)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Users can create a PC build. The price will dynamically render at the bottom as each part is selected.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![create](https://i.gyazo.com/790d6b4b645afd25a2be3b09791f7a74.mp4)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Users can view a list of their builds, where you can also edit and delete builds they have created.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![My builds](https://i.gyazo.com/26119e8865b70949dee61ce7a3659b85.mp4)
 
-## Learn More
+## Tech Stack Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app was created by leveraging ReactJS, Tailwind CSS, Python/Django, and SQLite.
