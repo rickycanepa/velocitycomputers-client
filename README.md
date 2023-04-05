@@ -19,7 +19,7 @@ Link to server-side repo: https://github.com/rickycanepa/velocitycomputers-serve
 
 Users can create view a feed of user created PC builds.
 
-![PC Feed](https://i.gyazo.com/3d07d84bb41429e2e150151bf23a7911.mp4)
+https://user-images.githubusercontent.com/84530867/229976033-1741d4e1-11c5-47cf-b4c2-82273fa46143.mp4
 
 Users can favorite and unfavorite builds, and navigate to my favorites to view their favorites.
 
