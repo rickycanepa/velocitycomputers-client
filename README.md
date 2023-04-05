@@ -43,4 +43,4 @@ https://user-images.githubusercontent.com/84530867/229976429-b073a0f4-e604-4c8b-
 
 ## Tech Stack Used
 
-This app was created by leveraging ReactJS, Tailwind CSS, Python/Django, and SQLite.
+This app was created by leveraging ReactJS, Next.js, Tailwind CSS, Python/Django, and SQLite.
